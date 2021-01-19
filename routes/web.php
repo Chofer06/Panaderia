@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ClientesController;
+use App\Http\Controllers\PanaderiaController;
+use App\Http\Controllers\ProductosController;
+use App\Http\Controllers\VentasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +17,32 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Ruta /
+Route::get('/',[PanaderiaController::class,'getIndex']);
+
+//Ruta Categoria
+Route::get('categoria',[ProductosController::class,'getCategoria']);
+
+//Ruta Productos
+Route::get('productos',[ProductosController::class,'getProductos']);
+
+//Ruta Clientes
+Route::get('clientes',[ClientesController::class,'getClientes']);
+
+//Ruta Ventas
+Route::get('ventas',[VentasController::class,'getVentas']);
+
+//Ruta Servicios/Habitaciones
+//Route::get('servicios/habitaciones',[HabitacionesController::class,'showHabitaciones']);
+
+//Ruta Clientes/Visualizar
+//Route::get('clientes/visualizar',[ClientesController::class,'showClientes']);
+
+//Ruta Facturacion
+//Route::get('facturacion/factura',[FacturacionController::class,'getFactura']);
+
+//Ruta Reservas
+//Route::get('reservas',[ReservasController::class,'getReservas']);
+
+//Ruta Contactos
+//Route::get('contactos',[HotelController::class,'showContactos']);
