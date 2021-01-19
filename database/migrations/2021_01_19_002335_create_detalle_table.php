@@ -15,6 +15,12 @@ class CreateDetalleTable extends Migration
     {
         Schema::create('detalle', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('factura')->unsigned();
+            $table->bigInteger('producto')->unsigned();
+            $table->integer('cantidad');
+            $table->float('precio');
+            $table->foreign('factura')->references('id')->on('facturas')->onDelete('cascade');
+            $table->foreign('producto')->references('id')->on('productos')->onDelete('cascade');
             $table->timestamps();
         });
     }
