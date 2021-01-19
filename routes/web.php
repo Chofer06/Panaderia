@@ -25,7 +25,8 @@ Route::get('categoria',[ProductosController::class,'Categoria'])->name('listado'
 Route::post('categoria',[ProductosController::class,'registrar']);
 
 //Ruta Productos
-Route::get('productos',[ProductosController::class,'Productos']);
+Route::get('productos',[ProductosController::class,'Productos'])->name('listadoP');
+Route::post('productos',[ProductosController::class,'registrarp']);
 
 //Ruta Clientes
 Route::get('clientes',[ClientesController::class,'getClientes']);
