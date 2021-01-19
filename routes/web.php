@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientesController;
 use App\Http\Controllers\PanaderiaController;
 use App\Http\Controllers\ProductosController;
+use App\Http\Controllers\Productos1Controller;
 use App\Http\Controllers\VentasController;
 
 /*
@@ -25,8 +26,12 @@ Route::get('categoria',[ProductosController::class,'Categoria'])->name('listado'
 Route::post('categoria',[ProductosController::class,'registrar']);
 
 //Ruta Productos
-Route::get('productos',[ProductosController::class,'Productos'])->name('listadoP');
-Route::post('productos',[ProductosController::class,'registrarp']);
+Route::get('productos',[Productos1Controller::class,'Productos'])->name('listadoP');
+Route::get('productos/registro',[Productos1Controller::class,'formularioReg']);
+Route::post('productos/registro',[Productos1Controller::class,'registrar'])->name('registraP');
+Route::get('productos/consulta', [Productos1Controller::class, 'form_consulta'])->name('formConsulta');
+Route::post('productos/consulta', [Productos1Controller::class, 'consultar'])->name('consulta');
+
 
 //Ruta Clientes
 Route::get('clientes',[ClientesController::class,'getClientes']);
