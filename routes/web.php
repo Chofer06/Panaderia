@@ -21,10 +21,11 @@ use App\Http\Controllers\VentasController;
 Route::get('/',[PanaderiaController::class,'getIndex']);
 
 //Ruta Categoria
-Route::get('categoria',[ProductosController::class,'getCategoria']);
+Route::get('categoria',[ProductosController::class,'Categoria'])->name('listado');
+Route::post('categoria',[ProductosController::class,'registrar']);
 
 //Ruta Productos
-Route::get('productos',[ProductosController::class,'getProductos']);
+Route::get('productos',[ProductosController::class,'Productos']);
 
 //Ruta Clientes
 Route::get('clientes',[ClientesController::class,'getClientes']);
